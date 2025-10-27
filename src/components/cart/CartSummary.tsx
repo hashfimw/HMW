@@ -1,6 +1,7 @@
 "use client";
 import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useCart } from "@/hooks/useCart";
 import { formatCurrency } from "@/lib/utils";
@@ -10,7 +11,10 @@ interface CartSummaryProps {
 }
 
 export function CartSummary({ onCheckout }: CartSummaryProps) {
-  const { items, totalItems, subtotal, checkout } = useCart();
+  const { items, totalItems, subtotal, originalSubtotal, totalSavings, checkout } =
+    useCart();
+
+  const hasDiscount = totalSavings > 0;
 
   const handleCheckout = () => {
     if (onCheckout) {
@@ -26,6 +30,7 @@ export function CartSummary({ onCheckout }: CartSummaryProps) {
 
   return (
     <>
+      {/* Desktop Summary */}
       <div className="hidden lg:block border border-border/50 rounded-lg p-6 bg-card sticky top-20">
         <h3 className="font-bold text-lg mb-4">Order Summary</h3>
 
@@ -43,9 +48,21 @@ export function CartSummary({ onCheckout }: CartSummaryProps) {
 
         <Separator className="my-4" />
 
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-baseline mb-6">
           <span className="font-semibold">Total</span>
-          <span className="text-2xl font-bold">{formatCurrency(subtotal)}</span>
+          <div className="text-right">
+            {hasDiscount && (
+              <div className="flex items-baseline gap-2 justify-end mb-1">
+                <span className="text-base text-muted-foreground line-through">
+                  {formatCurrency(originalSubtotal)}
+                </span>
+                <Badge variant="destructive" className="text-xs">
+                  {((totalSavings / originalSubtotal) * 100).toFixed(0)}%
+                </Badge>
+              </div>
+            )}
+            <div className="text-2xl font-bold">{formatCurrency(subtotal)}</div>
+          </div>
         </div>
 
         <Button
@@ -56,7 +73,6 @@ export function CartSummary({ onCheckout }: CartSummaryProps) {
           <SiWhatsapp className="h-5 w-5 mr-2" />
           Checkout via WhatsApp
         </Button>
-
         <p className="text-xs text-center text-muted-foreground mt-4">
           You will be redirected to WhatsApp with order details pre-filled
         </p>
@@ -67,6 +83,18 @@ export function CartSummary({ onCheckout }: CartSummaryProps) {
         <div className="flex justify-between items-center">
           <div>
             <p className="text-xs text-muted-foreground">Total ({totalItems} items)</p>
+            <div className="flex items-baseline gap-2 mt-0.5">
+              {hasDiscount && (
+                <>
+                  <p className="text-xs line-through text-muted-foreground">
+                    {formatCurrency(originalSubtotal)}
+                  </p>
+                  <Badge variant="destructive" className="text-[10px] h-4 px-1">
+                    {((totalSavings / originalSubtotal) * 100).toFixed(0)}%
+                  </Badge>
+                </>
+              )}
+            </div>
             <p className="text-xl font-bold">{formatCurrency(subtotal)}</p>
           </div>
           <Button
