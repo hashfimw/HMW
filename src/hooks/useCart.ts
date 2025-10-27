@@ -37,6 +37,11 @@ export const useCart = () => {
       subtotal: cart.subtotal,
     });
     window.open(whatsappLink, "_blank");
+    cart.clearCart();
+    toast({
+      title: "Order sent!",
+      description: "Your cart has been cleared.",
+    });
   };
 
   const isInCart = (productId: number): boolean => {
