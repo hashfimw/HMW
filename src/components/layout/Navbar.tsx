@@ -1,5 +1,3 @@
-// src/components/layout/Navbar.tsx
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -32,19 +30,13 @@ export function Navbar({ onSearch }: NavbarProps) {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // Track if scrolled for background opacity
       setIsScrolled(currentScrollY > 20);
 
-      // Show navbar when at top (within 200px threshold)
       if (currentScrollY < 200) {
         setIsVisible(true);
-      }
-      // Hide navbar when scrolling down
-      else if (currentScrollY > lastScrollY && currentScrollY > 500) {
+      } else if (currentScrollY > lastScrollY && currentScrollY > 500) {
         setIsVisible(false);
-      }
-      // Show navbar when scrolling up
-      else if (currentScrollY < lastScrollY) {
+      } else if (currentScrollY < lastScrollY) {
         setIsVisible(true);
       }
 
@@ -67,7 +59,6 @@ export function Navbar({ onSearch }: NavbarProps) {
 
   return (
     <>
-      {/* Spacer for mobile fixed navbar */}
       <div className="h-16 md:hidden " />
 
       <header
@@ -75,7 +66,6 @@ export function Navbar({ onSearch }: NavbarProps) {
           "fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300",
           "md:sticky md:translate-y-0 rounded-b-xl",
           isVisible ? "translate-y-0" : "-translate-y-full",
-          // Homepage desktop: transparent when at top, solid when scrolled
           isHomePage && !isScrolled
             ? "md:bg-transparent md:border-transparent"
             : "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border/40"
@@ -99,8 +89,6 @@ export function Navbar({ onSearch }: NavbarProps) {
                 {APP_NAME}
               </span>
             </Link>
-
-            {/* Actions */}
             <div className="flex items-center gap-2">
               {/* Desktop: Login/Logout Buttons */}
               <div className="hidden md:flex items-center gap-2">

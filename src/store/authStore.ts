@@ -1,5 +1,3 @@
-// src/store/authStore.ts
-
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { STORAGE_KEYS } from "@/constants/index.";
@@ -42,9 +40,7 @@ export const useAuthStore = create<AuthStore>()(
             user: null,
             isAuthenticated: false,
             isLoading: false,
-            error:
-              error.response?.data?.message ||
-              "Login failed. Please try again.",
+            error: error.response?.data?.message || "Login failed. Please try again.",
           });
         }
       },

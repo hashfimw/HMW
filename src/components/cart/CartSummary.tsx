@@ -1,5 +1,3 @@
-// src/components/cart/CartSummary.tsx
-
 "use client";
 import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
@@ -28,7 +26,6 @@ export function CartSummary({ onCheckout }: CartSummaryProps) {
 
   return (
     <>
-      {/* Desktop: Sticky Card */}
       <div className="hidden lg:block border border-border/50 rounded-lg p-6 bg-card sticky top-20">
         <h3 className="font-bold text-lg mb-4">Order Summary</h3>
 

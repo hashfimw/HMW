@@ -55,7 +55,6 @@ export const WHATSAPP_MESSAGE_TEMPLATE = (cart: {
   )}\n\nMohon proses pesanan ini. Terima kasih! 🙏`;
 };
 
-// Local Storage Keys
 export const STORAGE_KEYS = {
   CART: "fastrac-cart",
   AUTH_TOKEN: "fastrac-auth-token",

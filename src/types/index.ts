@@ -1,6 +1,3 @@
-// src/types/index.ts
-
-// Product Types
 export interface Product {
   id: number;
   title: string;
@@ -43,7 +40,6 @@ export interface Review {
   reviewerEmail: string;
 }
 
-// Cart Types
 export interface CartItem {
   product: Product;
   quantity: number;
@@ -56,7 +52,6 @@ export interface Cart {
   subtotal: number;
 }
 
-// Auth Types
 export interface User {
   id: number;
   username: string;
@@ -73,7 +68,6 @@ export interface LoginCredentials {
   password: string;
 }
 
-// API Response Types
 export interface ProductsResponse {
   products: Product[];
   total: number;
@@ -92,7 +86,6 @@ export interface AuthResponse {
   token: string;
 }
 
-// Filter & Search Types
 export interface ProductFilters {
   category?: string;
   search?: string;
