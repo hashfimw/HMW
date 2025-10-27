@@ -1,3 +1,5 @@
+import { formatCurrency } from "@/lib/utils";
+
 export const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER;
 export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME;
@@ -40,18 +42,16 @@ export const WHATSAPP_MESSAGE_TEMPLATE = (cart: {
       const variant = item.selectedVariant ? ` (${item.selectedVariant})` : "";
       return `${index + 1}. ${item.product.title}${variant}\n   SKU: ${
         item.product.sku
-      }\n   Qty: ${item.quantity}x @ Rp ${item.product.price.toLocaleString(
-        "id-ID"
-      )}\n   Subtotal: Rp ${(item.product.price * item.quantity).toLocaleString(
-        "id-ID"
-      )}`;
+      }\n   Qty: ${item.quantity}x @ ${formatCurrency(
+        item.product.price
+      )}\n   Subtotal: ${formatCurrency(item.product.price * item.quantity)}`;
     })
     .join("\n\n");
 
   return `*NEW ORDER - ${APP_NAME}*\n\n${orderDetails}\n\n---\n*Total Items:* ${
     cart.totalItems
-  }\n*Grand Total:* Rp ${cart.subtotal.toLocaleString(
-    "id-ID"
+  }\n*Grand Total:* ${formatCurrency(
+    cart.subtotal
   )}\n\nMohon proses pesanan ini. Terima kasih! 🙏`;
 };
 
