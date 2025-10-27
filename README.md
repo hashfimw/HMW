@@ -70,25 +70,33 @@ NEXT_PUBLIC_APP_NAME=HMW
 
 ### Alasan Pemilihan Tech Stack
 
-**Kenapa Next.js 14?**
+**Next.js 14?**
 
 Next.js 14 dipilih karena menyediakan App Router modern dengan server components, performa optimal dengan built-in optimization (Image, Font, dll), kemampuan SEO melalui server-side rendering, dan developer experience yang sangat baik dengan fast refresh dan dukungan TypeScript penuh.
 
-**Kenapa Zustand?**
+**Zustand?**
 
 Zustand dipilih karena kesederhanaannya tanpa boilerplate seperti Redux, performa tinggi dengan minimal re-renders, kemudahan persist ke localStorage, dan ukuran yang sangat kecil hanya ~1KB gzipped.
 
-**Kenapa Tailwind CSS?**
+**Tailwind CSS?**
 
 Tailwind CSS mempercepat pengembangan UI, memberikan konsistensi melalui utility classes, performa tinggi dengan purged unused CSS di production, dan dukungan dark mode yang sudah built-in.
 
-**Kenapa Shadcn UI?**
+**Shadcn UI?**
 
 Shadcn UI dipilih karena komponennya fully customizable (bukan package dependency), berbasis Radix UI yang accessible, terintegrasi sempurna dengan Tailwind CSS, dan kita memiliki kontrol penuh atas kode komponen. Untuk icons menggunakan kombinasi Lucide React dan React Icons.
 
-**Kenapa Axios?**
+**Axios?**
 
 Axios digunakan untuk data fetching karena API yang lebih clean dibanding fetch native, built-in request/response interceptors untuk auth token, automatic JSON transformation, dan error handling yang lebih baik dengan proper type safety.
+
+**DummyJSON API**
+
+- Data Lengkap dan Realistis
+  DummyJSON menyediakan struktur data yang menyerupai data e-commerce nyata — mencakup title, description, price, discountPercentage, rating, stock, brand, category, thumbnail, dan images. Hal ini memungkinkan pengujian UI katalog produk dengan data yang kredibel dan lengkap.
+- Endpoint CRUD yang Aman & Terisolasi
+  Salah satu keunggulan utama DummyJSON dibanding mock API lain (seperti Fake Store API atau yang lainnya) adalah sistem CRUD-nya yang tidak memengaruhi data global.
+  Ini membuat DummyJSON jauh lebih stabil dan aman untuk digunakan dalam proyek pembelajaran atau demo publik.
 
 ### Struktur Proyek
 
