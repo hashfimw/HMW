@@ -112,7 +112,7 @@ HMW/
 │   │
 │   ├── components/            # Komponen React
 │   │   ├── ui/               # Komponen base Shadcn UI
-│   │   ├── layout/           # Navbar, Footer, BottomNav
+│   │   ├── layout/           # Navbar, BottomNav
 │   │   ├── product/          # Product Card, Grid, Dialog
 │   │   └── cart/             # Cart Item, Summary
 │   │
@@ -125,9 +125,8 @@ HMW/
 │   │   └── useAuth.ts        # Wrapper operasi auth
 │   │
 │   ├── lib/                   # Utilities & Helpers
-│   │   ├── api.ts            # Axios client & API functions
-│   │   ├── axios.ts          # Axios instance & interceptors
-│   │   └── utils.ts          # Helper functions (cn, formatters)
+│   │   ├── api.ts            # API client & Afunctions
+│   │   └── utils.ts          # Helper functions
 │   │
 │   ├── types/                 # Definisi TypeScript
 │   │   └── index.ts          # Semua type definitions
