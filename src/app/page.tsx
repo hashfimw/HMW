@@ -32,7 +32,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section - Extended to behind navbar on mobile + desktop */}
       <section className="relative overflow-hidden -mt-16 pt-16 md:-mt-16 md:pt-16">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-secondary to-background opacity-50" />
         <Image

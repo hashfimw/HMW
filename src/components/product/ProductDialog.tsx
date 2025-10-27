@@ -84,9 +84,7 @@ export function ProductDialog({ product, open, onOpenChange }: ProductDialogProp
           <ArrowLeft className="h-5 w-5" />
         </button>
 
-        {/* Scrollable Content */}
         <div className="grid md:grid-cols-2 gap-0 overflow-y-auto flex-1">
-          {/* Left: Images */}
           <div className="relative bg-secondary md:p-6 p-0">
             <div className="relative aspect-square md:mb-4 md:rounded-lg overflow-hidden bg-background/50">
               <Image
@@ -142,7 +140,6 @@ export function ProductDialog({ product, open, onOpenChange }: ProductDialogProp
             </div>
           </div>
 
-          {/* Right: Details */}
           <div className="p-4 md:p-6 space-y-4 pb-36 md:pb-6">
             <DialogHeader>
               <div className="flex items-start justify-between gap-2">
@@ -245,7 +242,6 @@ export function ProductDialog({ product, open, onOpenChange }: ProductDialogProp
               </div>
             </div>
 
-            {/* Desktop: Subtotal + Buttons */}
             <div className="hidden md:block space-y-4">
               <div className="p-4 bg-secondary/50 rounded-lg">
                 <div className="flex justify-between items-center">

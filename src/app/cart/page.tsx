@@ -54,7 +54,6 @@ export default function CartPage() {
 
   return (
     <div className="container mx-auto px-3 sm:px-4 py-4 md:py-8 pb-24 md:pb-8">
-      {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-6 md:mb-8 gap-4">
         <div className="space-y-2">
           <Button variant="ghost" size="sm" className="h-8 px-2 -ml-2" asChild>
@@ -80,16 +79,13 @@ export default function CartPage() {
         </Button>
       </div>
 
-      {/* Cart Items and Summary */}
       <div className="grid lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-        {/* Cart Items */}
         <div className="lg:col-span-2 space-y-3 md:space-y-4">
           {items.map((item) => (
             <CartItem key={item.product.id} item={item} />
           ))}
         </div>
 
-        {/* Cart Summary - Sticky on mobile */}
         <div className="lg:block">
           <div className="lg:sticky lg:top-20">
             <CartSummary />
@@ -97,7 +93,6 @@ export default function CartPage() {
         </div>
       </div>
 
-      {/* Clear Cart Confirmation Dialog */}
       <Dialog open={showClearDialog} onOpenChange={setShowClearDialog}>
         <DialogContent className="max-w-[90vw] sm:max-w-md">
           <DialogHeader>

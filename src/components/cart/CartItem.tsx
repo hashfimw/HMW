@@ -72,7 +72,6 @@ export function CartItem({ item, variant = "default" }: CartItemProps) {
 
   return (
     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 p-3 sm:p-4 border border-border/50 rounded-lg bg-card">
-      {/* Image and Basic Info */}
       <div className="flex gap-3 sm:gap-4 flex-1">
         <div className="relative h-20 w-20 sm:h-24 sm:w-24 flex-shrink-0 rounded-lg overflow-hidden bg-secondary">
           <Image
@@ -111,10 +110,7 @@ export function CartItem({ item, variant = "default" }: CartItemProps) {
           </p>
         </div>
       </div>
-
-      {/* Quantity Controls and Actions */}
       <div className="flex sm:flex-col items-center sm:items-end justify-between sm:justify-between gap-2">
-        {/* Quantity Selector */}
         <div className="flex items-center border border-border rounded-lg">
           <Button
             variant="ghost"
@@ -136,8 +132,6 @@ export function CartItem({ item, variant = "default" }: CartItemProps) {
             <Plus className="h-3 w-3" />
           </Button>
         </div>
-
-        {/* Total and Remove */}
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="text-right">
             <p className="text-xs text-muted-foreground sm:hidden">Total</p>

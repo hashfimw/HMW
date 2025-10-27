@@ -37,7 +37,6 @@ export function ProductCard({ product }: ProductCardProps) {
         onMouseLeave={() => setIsHovered(false)}
         onClick={() => setShowDialog(true)}
       >
-        {/* Image Container */}
         <div className="relative aspect-square overflow-hidden bg-secondary">
           <Image
             src={product.thumbnail}
@@ -46,8 +45,6 @@ export function ProductCard({ product }: ProductCardProps) {
             className="object-cover transition-transform duration-500 group-hover:scale-110"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-
-          {/* Overlay on hover */}
           <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
             <Button
               size="icon"
@@ -62,8 +59,6 @@ export function ProductCard({ product }: ProductCardProps) {
               <Eye className="h-4 w-4" />
             </Button>
           </div>
-
-          {/* Badges */}
           <div className="absolute top-2 left-2 flex flex-col gap-1">
             {product.discountPercentage > 0 && (
               <Badge variant="destructive" className="shadow-lg">
@@ -76,8 +71,6 @@ export function ProductCard({ product }: ProductCardProps) {
               </Badge>
             )}
           </div>
-
-          {/* In Cart Indicator */}
           {inCart && (
             <div className="absolute top-2 right-2">
               <Badge className="shadow-lg bg-white text-black">
@@ -89,25 +82,18 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         <CardContent className="p-4">
-          {/* Category */}
           <p className="text-xs text-muted-foreground uppercase tracking-wider mb-1">
             {product.category.replace("-", " ")}
           </p>
-
-          {/* Title */}
           <h3 className="font-semibold text-sm mb-2 line-clamp-2 min-h-[2.5rem]">
             {product.title}
           </h3>
-
-          {/* Rating */}
           <div className="flex items-center gap-1 mb-3">
             <Star className="h-3 w-3 fill-yellow-500 text-yellow-500" />
             <span className="text-xs text-muted-foreground">
               {product.rating.toFixed(1)} ({product.reviews?.length || 0})
             </span>
           </div>
-
-          {/* Price */}
           <div className="flex items-end gap-2 mb-3">
             <span className="text-xl font-bold">{formatCurrency(discountedPrice)}</span>
             {product.discountPercentage > 0 && (
@@ -116,8 +102,6 @@ export function ProductCard({ product }: ProductCardProps) {
               </span>
             )}
           </div>
-
-          {/* Add to Cart Button */}
           <Button
             className="w-full"
             onClick={handleQuickAdd}
@@ -129,7 +113,6 @@ export function ProductCard({ product }: ProductCardProps) {
         </CardContent>
       </Card>
 
-      {/* Product Detail Dialog */}
       <ProductDialog product={product} open={showDialog} onOpenChange={setShowDialog} />
     </>
   );

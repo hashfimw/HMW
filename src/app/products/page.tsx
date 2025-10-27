@@ -95,7 +95,6 @@ export default function ProductsPage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Background - extends behind navbar */}
       <div className="relative -mt-16 pt-16 mb-8">
         <div className="container mx-auto px-4">
           <div className="relative overflow-hidden rounded-xl">
@@ -121,7 +120,6 @@ export default function ProductsPage() {
         </div>
       </div>
 
-      {/* Main Content */}
       <div className="container mx-auto px-4 pb-8">
         <div className="mb-8 space-y-4">
           <div className="flex gap-3">

@@ -85,8 +85,6 @@ export function BottomNav() {
               </Link>
             );
           })}
-
-          {/* Account - Sheet if authenticated, Link if not */}
           {isAuthenticated ? (
             <Sheet>
               <SheetTrigger asChild>
