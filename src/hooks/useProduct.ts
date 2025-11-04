@@ -6,9 +6,6 @@ import { formatCurrency } from "@/lib/utils";
 import { toast } from "./useToast";
 import type { Product } from "@/types";
 
-/**
- * Zod schema untuk validasi quantity
- */
 const createQuantitySchema = (maxStock: number) =>
   z
     .number()
@@ -36,9 +33,6 @@ export function useProductDialog(product: Product) {
   // Zod schema untuk current product
   const quantitySchema = createQuantitySchema(product.stock);
 
-  /**
-   * Validate quantity dengan Zod
-   */
   const validateQuantity = (value: number): { success: boolean; error?: string } => {
     const result = quantitySchema.safeParse(value);
 
@@ -50,9 +44,6 @@ export function useProductDialog(product: Product) {
     return { success: true };
   };
 
-  /**
-   * Handle quantity change dengan validation
-   */
   const handleQuantityChange = (value: string) => {
     // Allow empty string saat user mengetik
     if (value === "") {
@@ -78,9 +69,6 @@ export function useProductDialog(product: Product) {
     }
   };
 
-  /**
-   * Handle blur - validate & auto-correct
-   */
   const handleQuantityBlur = () => {
     const currentValue = Number(quantity);
 
@@ -107,9 +95,6 @@ export function useProductDialog(product: Product) {
     }
   };
 
-  /**
-   * Increment quantity
-   */
   const incrementQuantity = () => {
     if (quantity < product.stock) {
       setQuantity(quantity + 1);
@@ -122,18 +107,12 @@ export function useProductDialog(product: Product) {
     }
   };
 
-  /**
-   * Decrement quantity
-   */
   const decrementQuantity = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
   };
 
-  /**
-   * Add to cart with validation
-   */
   const handleAddToCart = (onSuccess?: () => void) => {
     const validation = validateQuantity(Number(quantity));
 
@@ -150,9 +129,6 @@ export function useProductDialog(product: Product) {
     onSuccess?.();
   };
 
-  /**
-   * Buy now via WhatsApp
-   */
   const handleBuyNow = (onSuccess?: () => void) => {
     const validation = validateQuantity(Number(quantity));
 
@@ -165,10 +141,8 @@ export function useProductDialog(product: Product) {
       return;
     }
 
-    // Add to cart
     addToCart(product, Number(quantity), variantLabel);
 
-    // Generate WhatsApp message
     const message = `*🛍️ NEW ORDER*\n\n1. ${product.title}\n   SKU: ${
       product.sku
     }\n   Variant: ${variantLabel}\n   Qty: ${quantity}x @ ${formatCurrency(
@@ -188,20 +162,15 @@ export function useProductDialog(product: Product) {
   };
 
   return {
-    // State
     quantity,
     selectedImage,
     selectedSize,
     selectedColor,
     variants,
-
-    // Computed
     discountedPrice,
     total,
     inCartQty,
     variantLabel,
-
-    // Handlers
     setSelectedImage,
     setSelectedSize,
     setSelectedColor,

@@ -48,25 +48,16 @@ const DEFAULT_VARIANT: VariantConfig = {
   colors: [{ name: "Default", hex: "#000000" }],
 };
 
-/**
- * Get variant configuration berdasarkan kategori produk
- */
 export function getProductVariants(category: string): VariantConfig {
   const normalizedCategory = category.toLowerCase();
   return VARIANT_CONFIGS[normalizedCategory] || DEFAULT_VARIANT;
 }
 
-/**
- * Check apakah produk punya multiple variants
- */
 export function hasMultipleVariants(category: string): boolean {
   const variants = getProductVariants(category);
   return variants.sizes.length > 1 || variants.colors.length > 1;
 }
 
-/**
- * Format variant label untuk display
- */
 export function formatVariantLabel(size: string, color: string): string {
   return `${size} / ${color}`;
 }
