@@ -1,6 +1,6 @@
 import { useCartStore } from "@/store/cartStore";
 import { generateWhatsAppLink } from "@/lib/utils";
-import { toast } from "@/hooks/use-toast";
+import { toast } from "@/hooks/useToast";
 import type { Product } from "@/types";
 
 export const useCart = () => {

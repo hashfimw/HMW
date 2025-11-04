@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useCart } from "@/hooks/useCart";
 import { useAuth } from "@/hooks/useAuth";
-import { APP_NAME } from "@/constants/index.";
+import { APP_NAME } from "@/constants";
 import { cn } from "@/lib/utils";
 
 interface NavbarProps {

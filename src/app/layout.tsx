@@ -4,7 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { BottomNav } from "@/components/layout/BottomNav";
 import { Toaster } from "@/components/ui/toaster";
-import { APP_NAME } from "@/constants/index.";
+import { APP_NAME } from "@/constants";
 
 const inter = Inter({ subsets: ["latin"] });
 

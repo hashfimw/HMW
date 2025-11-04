@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import type { Product, ProductsResponse, AuthResponse, LoginCredentials } from "@/types";
-import { API_BASE_URL, API_ENDPOINTS, STORAGE_KEYS } from "@/constants/index.";
+import { API_BASE_URL, API_ENDPOINTS, STORAGE_KEYS } from "@/constants";
 
 const apiClient: AxiosInstance = axios.create({
   baseURL: API_BASE_URL,

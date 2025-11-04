@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { Product, CartItem, Cart } from "@/types";
-import { STORAGE_KEYS } from "@/constants/index.";
+import { STORAGE_KEYS } from "@/constants";
 
 interface CartStore extends Cart {
   addItem: (product: Product, quantity?: number, variant?: string) => void;

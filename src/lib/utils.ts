@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { WHATSAPP_MESSAGE_TEMPLATE, WHATSAPP_NUMBER } from "@/constants/index.";
+import { WHATSAPP_MESSAGE_TEMPLATE, WHATSAPP_NUMBER } from "@/constants";
 import type { Cart } from "@/types";
 
 export function cn(...inputs: ClassValue[]) {

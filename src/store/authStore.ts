@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import { STORAGE_KEYS } from "@/constants/index.";
+import { STORAGE_KEYS } from "@/constants";
 import { loginUser, logoutUser as apiLogout } from "@/lib/api";
 import type { User, LoginCredentials } from "@/types";
 

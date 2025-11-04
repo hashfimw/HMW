@@ -14,7 +14,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { useAuth } from "@/hooks/useAuth";
-import { TEST_USER } from "@/constants/index.";
+import { TEST_USER } from "@/constants";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -57,9 +57,7 @@ export default function LoginPage() {
         <Card>
           <CardHeader>
             <CardTitle>Sign In</CardTitle>
-            <CardDescription>
-              Enter your credentials to continue
-            </CardDescription>
+            <CardDescription>Enter your credentials to continue</CardDescription>
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -76,9 +74,7 @@ export default function LoginPage() {
                   type="text"
                   placeholder="Enter your username"
                   value={formData.username}
-                  onChange={(e) =>
-                    setFormData({ ...formData, username: e.target.value })
-                  }
+                  onChange={(e) => setFormData({ ...formData, username: e.target.value })}
                   required
                   disabled={isLoading}
                   className="bg-secondary border-border"
@@ -140,12 +136,10 @@ export default function LoginPage() {
               <p className="text-sm font-medium mb-2">Demo Credentials:</p>
               <div className="text-xs text-muted-foreground space-y-1">
                 <p>
-                  Username:{" "}
-                  <code className="text-foreground">{TEST_USER.username}</code>
+                  Username: <code className="text-foreground">{TEST_USER.username}</code>
                 </p>
                 <p>
-                  Password:{" "}
-                  <code className="text-foreground">{TEST_USER.password}</code>
+                  Password: <code className="text-foreground">{TEST_USER.password}</code>
                 </p>
               </div>
             </div>

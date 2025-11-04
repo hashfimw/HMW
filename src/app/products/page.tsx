@@ -17,7 +17,7 @@ import { getAllCatalogProducts } from "@/lib/api";
 import { ProductGrid } from "@/components/product/ProductGrid";
 import type { Product } from "@/types";
 import { debounce } from "@/lib/utils";
-import { CATEGORIES, SORT_OPTIONS } from "@/constants/index.";
+import { CATEGORIES, SORT_OPTIONS } from "@/constants";
 
 export default function ProductsPage() {
   const [products, setProducts] = useState<Product[]>([]);
